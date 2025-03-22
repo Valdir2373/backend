@@ -16,9 +16,7 @@
     "moduleResolution": "node",
     "allowJs": true,
     "checkJs": false,
-    "declaration": false,
-    "noEmit": true,
-    "allowImportingTsExtensions": true
+    "declaration": false
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

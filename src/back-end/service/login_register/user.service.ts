@@ -34,20 +34,18 @@ export class UserService {
       return { errorMessage: "error", status: 500 };
     }
   }
-
   async AddUserOnRepositoryAuth(profile: Profile) {
     const userRepository = new UserRepository();
     const userAuth: UserEntityAuth = new UserEntityAuth(
       uuidv4(),
       profile.displayName,
-      profile?.emails?.[0].value
+      profile?.emails?.[0].value ?? "" // Use o valor do email se definido, caso contrário, string vazia
     );
     await userRepository.saveTheUserAUTH_OnRepository(userAuth);
     console.log(userAuth);
 
     return { status: 201, message: "User created successfully completed" };
   }
-
   async hashPassword(password: string): Promise<string> {
     const saltRounds = 10; // Custo computacional (ajuste conforme necessário)
     const hashedPassword = await bcrypt.hash(password, saltRounds);

@@ -1,4 +1,4 @@
-import App_Express from "./back-end/server/App_Express.ts";
+import App_Express from "./back-end/server/App_Express";
 
 const app = new App_Express();
 app.listen;

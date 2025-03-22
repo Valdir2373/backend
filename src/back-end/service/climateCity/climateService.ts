@@ -1,4 +1,4 @@
-import { ClimateDTO } from "../../../models/DTO/climateDTO.ts";
+import { ClimateDTO } from "../../models/DTO/climateDTO.ts";
 import { arrayURLS } from "./urls.ts";
 import puppeteer, { Browser, Page } from "puppeteer";
 
@@ -77,8 +77,8 @@ export class ClimateService {
           rain:
             variablesList
               ?.querySelector("._margin-l-5")
-              ?.textContent.trim()
-              .replace(/[\n\t]/g, "") || null,
+              ?.textContent?.trim()
+              .replace(/[\n\t]/g, "") ?? null,
           tempMin: tempElementMin?.textContent?.trim() || null,
           tempMax: tempElementMax?.textContent?.trim() || null,
         };

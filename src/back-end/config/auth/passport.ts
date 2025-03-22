@@ -34,11 +34,11 @@ passport.use(
   )
 );
 
-passport.serializeUser<Profile, string>((user, done) => {
-  done(null, user.id);
+passport.serializeUser<Profile>((user, done) => {
+  done(null);
 });
 
-passport.deserializeUser<string, Profile>((id, done) => {
+passport.deserializeUser<Profile>((id, done) => {
   // Busca o usuário na simulação em memória pelo ID
   // const user = users.find((user) => user.id === id);
 

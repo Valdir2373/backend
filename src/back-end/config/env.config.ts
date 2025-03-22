@@ -9,3 +9,5 @@ if (__dirname.startsWith("/")) {
 }
 const envPath = path.resolve(__dirname, "../.env");
 export default dotenv.config({ path: envPath });
+
+console.log(__dirname);

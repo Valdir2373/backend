@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { RespondUser } from "../service/AI/RespondUser.ts";
+import { RespondUser } from "../service/AI/RespondUser";
 const routerAI = Router();
 routerAI.get("/AI", (req, res) => {
   res.send("<h1>ROTA DE IA USADA O GEMINI</h2>");

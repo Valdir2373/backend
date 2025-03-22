@@ -1,4 +1,4 @@
-// Serviço AuthenticatedUser (authenticated-user.service.ts)
+// Serviço AuthenticatedUser (authenticated-user.service)
 
 import { UserRepository } from "../../repository/UserRepository";
 

@@ -1,4 +1,4 @@
-import envConfig from "../env.config.ts";
+import envConfig from "../env.config";
 import jwt from "jsonwebtoken";
 envConfig;
 

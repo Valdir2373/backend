@@ -1,10 +1,10 @@
 import { Profile, use } from "passport";
-import { UserRepository } from "../../repository/UserRepository.ts";
-import { UserCreateDTO } from "../../models/DTO/user/UserCreateDTO.ts";
-import { UserEntity } from "../../models/Entity/user/UserEntity.ts";
+import { UserRepository } from "../../repository/UserRepository";
+import { UserCreateDTO } from "../../models/DTO/user/UserCreateDTO";
+import { UserEntity } from "../../models/Entity/user/UserEntity";
 import bcrypt from "bcrypt";
 import { v4 as uuidv4 } from "uuid";
-import { UserEntityAuth } from "../../models/Entity/user/UserEntityAuth.ts";
+import { UserEntityAuth } from "../../models/Entity/user/UserEntityAuth";
 
 export class UserService {
   userRepository: UserRepository;

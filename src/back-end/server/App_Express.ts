@@ -1,10 +1,10 @@
 import express, { NextFunction } from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import routerAI from "../controller/RouterAI.ts";
-import routerCity from "../controller/routerCity.ts";
-import RouterAuth from "../controller/RouterAuth.ts";
-import RouterUser from "../controller/RouterUser.ts";
+import routerAI from "../controller/RouterAI";
+import routerCity from "../controller/routerCity";
+import RouterAuth from "../controller/RouterAuth";
+import RouterUser from "../controller/RouterUser";
 import "reflect-metadata";
 
 export default class App_Express {

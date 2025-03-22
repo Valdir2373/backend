@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction, Router } from "express";
 import session from "express-session";
-import passport from "../config/auth/passport.ts";
+import passport from "../config/auth/passport";
 import { Profile } from "passport-google-oauth20";
-import envConfig from "../config/env.config.ts";
+import envConfig from "../config/env.config";
 import jwt from "jsonwebtoken";
-import { AuthenticatedUserService } from "../service/login_register/authenticated-user.service.ts";
-import generateToken from "../config/auth/jwt.ts";
+import { AuthenticatedUserService } from "../service/login_register/authenticated-user.service";
+import generateToken from "../config/auth/jwt";
 envConfig;
 
 const routerAuth = Router();

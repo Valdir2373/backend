@@ -6,12 +6,21 @@ import generateTokenJWT from "../config/auth/jwt.js";
 const routerUser = Router();
 const userService = new UserService();
 
+// routerUser.get("user/a", peguetodos);
 // routerUser.post("/User", registerUser);
 routerUser.get("/User/all", getAllUsers);
 routerUser.post("/User/Login", loginUser);
-routerUser.get("/us", (req, res) => {
-  res.send(`ola mundo`);
-});
+
+async function getAllUsers(req: Request, res: Response) {
+  try {
+    const users = await userService.gettingAllUsersOfRepository();
+    res.send(users); // Passa o resultado da função
+  } catch (error) {
+    // Lidar com erros adequadamente
+    console.error("Erro ao obter usuários:", error);
+    res.status(500).send("Erro ao obter usuários");
+  }
+}
 
 async function registerUser(req: Request, res: Response) {
   try {
@@ -43,10 +52,6 @@ async function loginUser(req: Request, res: Response) {
   });
 
   res.json({ token: "Enviado" });
-}
-
-function getAllUsers(req: Request, res: Response) {
-  res.send(userService.gettingAllUsersOfRepository);
 }
 
 export default routerUser;

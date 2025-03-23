@@ -6,7 +6,7 @@ import generateTokenJWT from "../config/auth/jwt";
 const routerUser = Router();
 const userService = new UserService();
 
-routerUser.post("/User", registerUser);
+// routerUser.post("/User", registerUser);
 routerUser.get("/User/all", getAllUsers);
 routerUser.post("/User/Login", loginUser);
 

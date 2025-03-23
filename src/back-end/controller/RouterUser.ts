@@ -14,7 +14,10 @@ routerUser.post("/User/Login", loginUser);
 async function getAllUsers(req: Request, res: Response) {
   try {
     const users = await userService.gettingAllUsersOfRepository();
-    res.send(users); // Passa o resultado da função
+    // res.send(users); // Passa o resultado da função
+    console.log(users);
+
+    res.send("aaa");
   } catch (error) {
     // Lidar com erros adequadamente
     console.error("Erro ao obter usuários:", error);

@@ -1,5 +1,5 @@
 import { NeonQueryFunction } from "@neondatabase/serverless";
-import { sql } from "../config/DB";
+import { sql } from "../config/DB.js";
 import { UserEntity } from "../models/Entity/user/UserEntity.js";
 import { UserEntityAuth } from "../models/Entity/user/UserEntityAuth.js";
 export class UserRepository {

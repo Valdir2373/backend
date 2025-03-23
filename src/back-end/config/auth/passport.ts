@@ -5,7 +5,7 @@ import {
   Profile,
 } from "passport-google-oauth20";
 import { UserService } from "../../service/login_register/user.service.js";
-import envConfig from "../env.config";
+import envConfig from "../env.config.js";
 
 envConfig;
 

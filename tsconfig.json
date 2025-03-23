@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    // "skipLibCheck": true,
+    "skipLibCheck": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "outDir": "./dist",
@@ -16,7 +16,9 @@
     "moduleResolution": "node",
     "allowJs": true,
     "checkJs": false,
-    "declaration": false
+    "declaration": false,
+    "noEmit": true,
+    "allowImportingTsExtensions": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

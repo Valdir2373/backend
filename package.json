@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": " node dist/back-end/server/App_Express",
+    "start": " node dist/back-end/server/App_Express.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

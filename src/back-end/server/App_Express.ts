@@ -28,7 +28,21 @@ export default class App_Express {
     //   })
     // );
 
-    this.app.use(cors({ origin: "https://dev-valdir-port.netlify.app/" }));
+    this.app.use(
+      cors({
+        origin: function (origin, callback) {
+          if (
+            !origin ||
+            origin.startsWith("https://dev-valdir-port.netlify.app")
+          ) {
+            callback(null, origin);
+          } else {
+            callback(new Error("Origin refused"));
+          }
+        },
+      })
+    );
+
     this.app.use(express.json());
     this.createRouter();
   }

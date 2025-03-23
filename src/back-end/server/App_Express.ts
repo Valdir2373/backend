@@ -14,12 +14,7 @@ export default class App_Express {
     this.app = express();
     this.app.use(cookieParser());
 
-    this.app.use(
-      cors({
-        origin: "http://127.0.0.1:5500/",
-        credentials: true,
-      })
-    );
+    this.app.use(cors());
     this.app.use(express.json());
     this.createRouter();
   }

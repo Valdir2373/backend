@@ -9,6 +9,9 @@ const userService = new UserService();
 // routerUser.post("/User", registerUser);
 routerUser.get("/User/all", getAllUsers);
 routerUser.post("/User/Login", loginUser);
+routerUser.get("/us", (req, res) => {
+  res.send(`ola mundo`);
+});
 
 async function registerUser(req: Request, res: Response) {
   try {

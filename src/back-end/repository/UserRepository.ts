@@ -25,6 +25,8 @@ export class UserRepository {
     }
   }
   async getAllUsers(): Promise<Record<string, any>[]> {
+    console.log("chegou AQUI");
+
     return await sql`SELECT * FROM users`;
   }
   async findUserByEmail(email: string) {

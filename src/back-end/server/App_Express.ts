@@ -6,6 +6,9 @@ import routerCity from "../controller/routerCity.js";
 import RouterAuth from "../controller/RouterAuth.js";
 import RouterUser from "../controller/RouterUser.js";
 import "reflect-metadata";
+import session from "express-session";
+import { RedisStore } from "connect-redis";
+import redis from "redis";
 
 export default class App_Express {
   private app: any;
@@ -13,6 +16,32 @@ export default class App_Express {
   constructor() {
     this.app = express();
     this.app.use(cookieParser());
+
+    const redisClient = redis.createClient({
+      url: process.env.REDIS_URL, // Obtém a URL do Redis do Railway
+    });
+
+    redisClient.on("error", (err) => console.log("Redis Client Error", err));
+
+    redisClient.connect().catch(console.error);
+
+    const redisStore = new RedisStore({
+      client: redisClient,
+    });
+
+    this.app.use(
+      session({
+        store: redisStore,
+        secret: "your-secret-key", // Substitua por uma chave secreta forte
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+          secure: process.env.NODE_ENV === "production", // Garante que o cookie seja seguro em produção
+          httpOnly: true,
+          maxAge: 1000 * 60 * 60 * 24, // 1 dia
+        },
+      })
+    );
 
     this.app.use(cors());
     this.app.use(express.json());
@@ -24,7 +53,7 @@ export default class App_Express {
     );
   }
   createRouter() {
-    console.log("\x1b[35m   \x1d📌 Subindo Rotas\x1b[0m");
+    console.log("\x1b[35m  \x1d📌 Subindo Rotas\x1b[0m");
     this.app.use(routerAI);
     this.app.use(routerCity);
     this.app.use(RouterAuth);

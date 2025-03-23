@@ -16,7 +16,7 @@ export default class App_Express {
 
     this.app.use(
       cors({
-        origin: "https://dev-valdir-port.netlify.app",
+        origin: "http://127.0.0.1:5500/",
         credentials: true,
       })
     );

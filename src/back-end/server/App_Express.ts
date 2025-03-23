@@ -1,4 +1,4 @@
-import express, { NextFunction } from "express";
+import express, { Request, Response, NextFunction } from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import routerAI from "../controller/RouterAI.js";
@@ -30,18 +30,18 @@ export default class App_Express {
 
     this.app.use(
       cors({
-        origin: function (origin, callback) {
-          if (
-            !origin ||
-            origin.startsWith("https://dev-valdir-port.netlify.app")
-          ) {
-            callback(null, origin);
-          } else {
-            callback(new Error("Origin refused"));
-          }
-        },
+        origin: "https://dev-valdir-port.netlify.app",
+        credentials: true,
       })
     );
+
+    this.app.use((req: Request, res: Response, next: NextFunction) => {
+      if (req.headers.origin === "https://dev-valdir-port.netlify.app") {
+        next();
+      } else {
+        res.status(403).send("Forbidden");
+      }
+    });
 
     this.app.use(express.json());
     this.createRouter();

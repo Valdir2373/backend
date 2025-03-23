@@ -4,7 +4,7 @@ import {
   VerifyCallback,
   Profile,
 } from "passport-google-oauth20";
-import { UserService } from "../../service/login_register/user.service";
+import { UserService } from "../../service/login_register/user.service.js";
 import envConfig from "../env.config";
 
 envConfig;

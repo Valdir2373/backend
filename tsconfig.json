@@ -17,6 +17,8 @@
     "allowJs": true,
     "checkJs": false,
     "declaration": false,
+    "noEmit": true,
+    "allowImportingTsExtensions": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

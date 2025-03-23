@@ -9,11 +9,11 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": " node dist/main.js",
+    "start": "node dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "dev-valdir",
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.24.0",

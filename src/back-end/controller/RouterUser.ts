@@ -1,7 +1,7 @@
 import { Router, Request, Response } from "express";
-import { UserCreateDTO } from "../models/DTO/user/UserCreateDTO";
-import { UserService } from "../service/login_register/user.service";
-import generateTokenJWT from "../config/auth/jwt";
+import { UserCreateDTO } from "../models/DTO/user/UserCreateDTO.js";
+import { UserService } from "../service/login_register/user.service.js";
+import generateTokenJWT from "../config/auth/jwt.js";
 
 const routerUser = Router();
 const userService = new UserService();

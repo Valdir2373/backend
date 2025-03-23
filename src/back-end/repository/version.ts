@@ -1,4 +1,4 @@
-import { sql } from "../config/DB";
+import { sql } from "../config/DB.js";
 export default async function getDatabaseVersion(): Promise<string> {
   try {
     const result = await sql`SELECT version()`;

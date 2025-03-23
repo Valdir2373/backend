@@ -1,6 +1,6 @@
 // Serviço AuthenticatedUser (authenticated-user.service)
 
-import { UserRepository } from "../../repository/UserRepository";
+import { UserRepository } from "../../repository/UserRepository.js";
 
 export class AuthenticatedUserService {
   private userRepository: UserRepository;

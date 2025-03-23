@@ -1,7 +1,7 @@
 import { NeonQueryFunction } from "@neondatabase/serverless";
 import { sql } from "../config/DB";
-import { UserEntity } from "../models/Entity/user/UserEntity";
-import { UserEntityAuth } from "../models/Entity/user/UserEntityAuth";
+import { UserEntity } from "../models/Entity/user/UserEntity.js";
+import { UserEntityAuth } from "../models/Entity/user/UserEntityAuth.js";
 export class UserRepository {
   async saveTheUserOnRepository(
     newUser: UserEntity,

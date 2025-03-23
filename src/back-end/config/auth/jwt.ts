@@ -1,6 +1,5 @@
-import envConfig from "../env.config";
+import envConfig from "../env.config.js";
 import jwt from "jsonwebtoken";
-import ms from "ms";
 envConfig;
 
 const generateToken = (yourPayload: string, expiresIn: number) => {

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ClimateService } from "../service/climateCity/climateService";
+import { ClimateService } from "../service/climateCity/climateService.js";
 const routerCity = Router();
 
 routerCity.post("/Climate/City/", async (req, res) => {

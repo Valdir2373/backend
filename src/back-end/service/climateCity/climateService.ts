@@ -1,5 +1,5 @@
-import { ClimateDTO } from "../../models/DTO/climateDTO";
-import { arrayURLS } from "./urls";
+import { ClimateDTO } from "../../models/DTO/climateDTO.js";
+import { arrayURLS } from "./urls.js";
 import puppeteer, { Browser, Page } from "puppeteer";
 
 export class ClimateService {

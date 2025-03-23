@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction, Router } from "express";
 import session from "express-session";
-import passport from "../config/auth/passport";
-import { Profile, Strategy } from "passport-google-oauth20"; // Importe Strategy
-import envConfig from "../config/env.config";
 import jwt, { Secret } from "jsonwebtoken"; // Importe Secret
-import { AuthenticatedUserService } from "../service/login_register/authenticated-user.service";
-import generateToken from "../config/auth/jwt";
+import { Profile, Strategy } from "passport-google-oauth20"; // Importe Strategy
+import passport from "../config/auth/passport.js";
+import envConfig from "../config/env.config.js";
+import { AuthenticatedUserService } from "../service/login_register/authenticated-user.service.js";
+import generateToken from "../config/auth/jwt.js";
 
 envConfig;
 
